@@ -8,6 +8,20 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+.container {
+    position: relative;
+}
+
+.text-block {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: black;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 </style>
 <body class="w3-light-grey w3-content" style="max-width:1600px">
 
@@ -44,10 +58,15 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 
   <!-- Header -->
   <header id="portfolio">
-    <a href="#"><img src="profile-photo.JPG" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+    <div>
+	<a href="#"><img src="profile-photo.JPG" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
     <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
-    <div class="w3-container">
-    <h1><b>My Portfolio - Matthew Croft</b></h1>
+    <div class="container">
+	<img src="background.JPG" alt="image of Banff" style="width:100%" style="margin: auto">
+	<div class="text-block">
+	<h1><b>My Portfolio - Matthew Croft</b></h1>
+	</div>
+	</div>
     <div class="w3-section w3-bottombar w3-padding-16">
       <span class="w3-margin-right">Filter (Coming Soon):</span> 
       <button class="w3-button w3-black">ALL</button>
