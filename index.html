@@ -322,9 +322,18 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
         <p><i class="fa fa-envelope w3-xxlarge w3-text-light-grey"></i></p>
         <p>mcroft@eastlink.ca</p>
       </div>
-      <div class="w3-third w3-teal">
+      <div class="w3-third w3-teal" onclick="document.getElementById('id04').style.display='block'">
         <p><i class="fa fa-map-marker w3-xxlarge w3-text-light-grey"></i></p>
         <p>Halifax, NS</p>
+	      <div id="id04" class="w3-modal">
+				<div class="w3-modal-content">
+				<div class="w3-container">
+				<span onclick="document.getElementById('id04').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+					<h1>Below is a map of Halifax</h1>
+					<iframe src="https://www.google.com/maps/embed?pb=" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		   </div>
+		  </div>
       </div>
       <div class="w3-third w3-dark-grey">
         <p><i class="fa fa-phone w3-xxlarge w3-text-light-grey"></i></p>
