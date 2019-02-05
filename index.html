@@ -36,7 +36,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 }
 </style>
 
-<body class="w3-light-grey w3-content" style="max-width:1600px">
+<body class="w3-light-grey w3-content" style="max-width:1600px" onload="startTime()">
 <h2 class= "w3-panel w3-black w3-round-xlarge w3-hide-large w3-hide-medium w3-center" ><b>My Portfolio - Matthew Croft</b></h2>
 <!-- Sidebar/menu -->
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
@@ -62,6 +62,10 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     <a href="https://twitter.com/MatthewCroft_"><i class="fa fa-twitter w3-hover-opacity"></i></a>
     <a href="https://www.linkedin.com/in/matthew-croft-b814b6146"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
   </div>
+  	<div>
+	<div class="w3-left w3-margin-left" id="txt"></div>
+	<iframe class ="w3-center" src="http://free.timeanddate.com/clock/i6me0lrg/n286/szw160/szh160/hoc000/hbw3/cf100/hnce1ead6/fav0/fiv0/mqc000/mqs3/mql25/mqw6/mqd96/mhc000/mhs3/mhl20/mhw6/mhd96/mmc000/mms3/mml10/mmw2/mmd96/hhw16/hmw16/hmr4/hsc000/hss3/hsl90" frameborder="0" width="160" height="160"></iframe>
+	</div>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
@@ -79,7 +83,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
 	<div class="text-block w3-hide-small" style=" box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 0px 8px 0;">
 	<h2><b>My Portfolio - Matthew Croft</b></h2>
 	</div>
-	<img src="background.JPG" alt="image of Banff" title="Banff, Alberta, Canada (2018)" style="width:100%;margin:auto">
+	<img class="mySlides" src="background.JPG" alt="image of Banff" title="Banff, Alberta, Canada (2018)" style="width:100%;margin:auto">
+	<img class="mySlides" src="background_1.JPG" alt="image of Banff" title="Rockies, Alberta, Canada (2018)" style="width:100%;margin:auto">
 	</div>
     <div class="w3-section w3-bottombar w3-padding-16 w3-margin-left">
       <span class="w3-margin-right w3-hide-small">Filter (Coming Soon):</span> 
@@ -424,6 +429,37 @@ function w3_open() {
 function w3_close() {
     document.getElementById("mySidebar").style.display = "none";
     document.getElementById("myOverlay").style.display = "none";
+}
+//Slideshow Functions
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 10000); // Change image every 10 seconds
+}
+//Clock Function
+function startTime() {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('txt').innerHTML =
+  h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+  return i;
 }
 </script>
 
