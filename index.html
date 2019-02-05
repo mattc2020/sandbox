@@ -203,16 +203,60 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
     </div>
     
 <!-- Project Tables -->
-	<div>
-	    <h4><strong>Projects.</strong></h4>
-	  <div class="w3-row-padding">
-    <div class="w3-third w3-container w3-margin-bottom" >
-      <a href="https://www.armbrae.ns.ca"><img src="coin_trap.png" alt="Armbrae Academy" style="width:100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0" class="w3-hover-opacity" title="3d Modeling Code"></a>
+
+
+
+  <div class="w3-row-padding">
+	<!--Scad project card-->	
+    <div class="w3-third w3-container w3-margin-bottom">
+      <img src="coin_trap.png" alt="Coin Trap" style="width:100%" title="Click to see more!" onclick="document.getElementById('modalScad').style.display='block'" class="w3-hover-opacity">
       <div class="w3-container w3-white">
-        <p><b>3d Modeling</b></p>
-        <p>This project involved coding a 3d model to print. This model is a coin trap and hold a coin in the inside.</p>
+        <p><b>3D Modeling Projects</b></p>
+        <p>This term we have worked on various 3D modeling projects. Click on the image above to take a look!</p>
       </div>
-    </div>
+	  <!--Scad modal-->	
+	  <div id="modalScad" class="w3-modal">
+		<div class="w3-modal-content w3-light-grey w3-card-4">
+		  <header class="w3-container" > 
+			<span onclick="document.getElementById('modalScad').style.display='none'" 
+		  class="w3-button w3-display-topright">&times;</span>
+			<h2>3D Modeling on OpenSCAD</h2>
+		  </header>
+		  <div class="w3-container">
+			<div class="w3-row">
+			  <div class="w3-col s8 w3-white w3-padding">
+			  <p>Here we learned how to design and create various objects and tools to be printed into real objects. </p>
+			  <p>The slideshow on the right will show you some of the projects we have done this term. </p>
+			</div>
+			  <div class="w3-col s4  w3-center w3-container">
+<div class="w3-content" style="max-width:800px">
+  <img class="mySlides_1" src="family.jpg" style="width:100%">
+  <img class="mySlides_1" src="keji.jpg" style="width:100%">
+  <img class="mySlides_1" src="coin_trap.PNG" style="width:100%">
+</div>
+
+<div class="w3-center">
+  <div class="w3-section">
+    <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
+    <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
+			  </div>
+			</div>
+		  </div>
+		  <footer class="w3-container ">
+			<p> </p>
+		  </footer>
+		</div>
+	  </div>
+</div>
+</div>
+</div>
+	
+	
+	
+	
+	
+	
+
     <div class="w3-third w3-container w3-margin-bottom">
       <a href="https://mattc2020.github.io/tribute/"><img src="tribute_page.png" title="Visit Webpage" alt="Image from Canada Games" style="width:100%; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0" class="w3-hover-opacity"></a>
       <div class="w3-container w3-white">
@@ -228,13 +272,13 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
       </div>
     </div>
   </div>
-	</div>	
+
 	
 	     <div class="w3-container">
     <div class="w3-section w3-bottombar w3-padding-16">
     </div>
     </div>
-	
+	</div>
     <h4><strong>More about me.</strong></h4>
     <!-- Info Tables -->
     <div class="w3-row-padding" style="margin:0 -16px">
@@ -460,6 +504,36 @@ function startTime() {
 function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
+}
+
+//Slides!
+
+
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides_1");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-red", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-red";
 }
 </script>
 
