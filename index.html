@@ -531,8 +531,9 @@ function showDivs(n) {
 }
 
 //Get the modal
-	var modals=['id01','id02'];
+	var modals=['modalScad','id01','id02','id03','id04'];
 //When the user clicks anywhere outside	of the modal, close it
+window.onclick = function(event) {
 	for (var i=0; i< modals.length; i++) {
 		var modal = document.getElementById(modals[i]);
 		if (event.target == modal) {
