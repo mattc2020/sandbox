@@ -529,6 +529,17 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " w3-red";
 }
+
+//Get the modal
+	var modals=['id01','id02'];
+//When the user clicks anywhere outside	of the modal, close it
+	for (var i=0; i< modals.length; i++) {
+		var modal = document.getElementById(modals[i]);
+		if (event.target == modal) {
+		modal.style.display = "none";	
+		}
+	    }
+        }
 </script>
 
 </body>
